@@ -1,5 +1,5 @@
 {
-  // access modifier
+  // geeter and dsetter
   class BankAccount {
     public id: number;
     public readonly name: string;
@@ -11,23 +11,31 @@
       this.name = name;
       this._balance = balance;
     }
-    addDeposit(amount: number) {
+
+    //   seeter
+    set deposit(amount: number) {
       this._balance = this._balance + amount;
+    }
+    //   geeter
+    get Balance() {
+      return this._balance;
     }
   }
 
   const GoribManushAccount = new BankAccount(100, "adnan", 200);
-  GoribManushAccount.addDeposit(500);
 
-  console.log(GoribManushAccount);
+  GoribManushAccount.deposit = 100;
 
+  const myBalance = GoribManushAccount.Balance;
 
-//   
-class StudentAccount extends BankAccount{
-    test(){
-        this._balance=this._balance
+  console.log(myBalance);
+
+  //
+  class StudentAccount extends BankAccount {
+    test() {
+      this._balance = this._balance;
     }
-}
+  }
 
   //
 }
